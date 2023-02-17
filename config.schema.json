@@ -1,5 +1,5 @@
 {
-    "pluginAlias": "WLED",
+    "pluginAlias": "WLED_BrightnessFix",
     "pluginType": "platform",
     "singular": true,
     "headerDisplay": "homebridge-simple-wled: Nearly complete HomeKit support for WLED. See the [Github project page](https://github.com/jstrausd/homebridge-simple-wled) for more documentation.",
