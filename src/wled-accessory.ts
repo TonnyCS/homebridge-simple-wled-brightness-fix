@@ -543,9 +543,9 @@ export class WLED {
       case 5: r = 1, g = p, b = q; break;
     }
     return [
-      Math.round(r * 255),
-      Math.round(g * 255),
-      Math.round(b * 255)
+      Math.round((r as number) * 255),
+      Math.round((g as number) * 255),
+      Math.round((b as number) * 255)
     ];
   }
 
