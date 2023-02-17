@@ -1,7 +1,7 @@
 {
   "name": "homebridge-simple-wled-brightness-fix",
   "displayName": "Simple WLED with brightness fix",
-  "version": "1.3.6",
+  "version": "1.3.7",
   "description": "An accessory plugin for homebridge to support WLED Strips",
   "main": "dist/index.js",
   "scripts": {
