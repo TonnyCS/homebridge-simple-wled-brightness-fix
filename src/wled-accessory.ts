@@ -232,7 +232,7 @@ export class WLED {
 
     this.lightService.getCharacteristic(this.hap.Characteristic.Hue)
       .on(CharacteristicEventTypes.GET, (callback: CharacteristicGetCallback) => {
-        let colorArray = this.HSVtoRGB(this.hue, this.saturation, this.currentBrightnessToPercent());
+        let colorArray = this.HSVtoRGB(this.hue, this.saturation, 100);
         this.colorArray = colorArray;
         if (this.debug)
           this.log("Current hue: " + this.hue + "%");
@@ -243,7 +243,7 @@ export class WLED {
 
         this.hue = value as number;
         this.turnOffAllEffects();
-        let colorArray = this.HSVtoRGB(this.hue, this.saturation, this.currentBrightnessToPercent());
+        let colorArray = this.HSVtoRGB(this.hue, this.saturation, 100);
 
         this.host.forEach((host) => {
           httpSendData(`http://${host}/json`, "POST", { "bri": this.brightness, "seg": [{ "col": [colorArray] }] }, (error: any, response: any) => { if (error) this.log("Error while changing color of WLED " + this.name + " (" + host + ")"); });
@@ -341,7 +341,7 @@ export class WLED {
       this.turnOffWLED();
       return;
     }
-    let colorArray = this.HSVtoRGB(this.hue, this.saturation, this.currentBrightnessToPercent());
+    let colorArray = this.HSVtoRGB(this.hue, this.saturation, 100);
     this.colorArray = colorArray;
     if (this.debug)
       this.log("COLOR ARRAY BRIGHTNESS: " + colorArray);
